@@ -23,8 +23,14 @@
 // Constants
 const uint16_t kMitsubishiHeavyHdrMark = 3140;
 const uint16_t kMitsubishiHeavyHdrSpace = 1630;
-const uint16_t kMitsubishiHeavyBitMark = 370;
-const uint16_t kMitsubishiHeavyOneSpace = 420;
+//const uint16_t kMitsubishiHeavyBitMark = 370;
+//const uint16_t kMitsubishiHeavyOneSpace = 420;
+
+//FB: fix for my mitsubish heavy RKX502A007P
+const uint16_t kMitsubishiHeavyBitMark = 490;
+const uint16_t kMitsubishiHeavyOneSpace = 340;
+
+
 const uint16_t kMitsubishiHeavyZeroSpace = 1220;
 const uint32_t kMitsubishiHeavyGap = kDefaultMessageGap;  // Just a guess.
 

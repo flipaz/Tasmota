@@ -81,6 +81,12 @@
 #define _IR_ENABLE_DEFAULT_ true  // Unless set externally, the default is on.
 #endif  // _IR_ENABLE_DEFAULT_
 
+// FB: Force all protocols off by default
+#ifdef _IR_ENABLE_DEFAULT_
+ #undef _IR_ENABLE_DEFAULT_
+#endif
+#define _IR_ENABLE_DEFAULT_ false
+
 // Supported IR protocols
 // Each protocol you include costs memory and, during decode, costs time
 // Disable (set to false) all the protocols you do not need/want!
@@ -93,7 +99,8 @@
 #endif  // DECODE_HASH
 
 #ifndef SEND_RAW
-#define SEND_RAW               _IR_ENABLE_DEFAULT_
+//#define SEND_RAW               _IR_ENABLE_DEFAULT_
+#define SEND_RAW               true
 #endif  // SEND_RAW
 
 #ifndef DECODE_NEC
@@ -310,7 +317,8 @@
 #define DECODE_GLOBALCACHE     false  // Not applicable.
 #endif  // DECODE_GLOBALCACHE
 #ifndef SEND_GLOBALCACHE
-#define SEND_GLOBALCACHE       _IR_ENABLE_DEFAULT_
+//#define SEND_GLOBALCACHE       _IR_ENABLE_DEFAULT_
+#define SEND_GLOBALCACHE       true
 #endif  // SEND_GLOBALCACHE
 
 #ifndef DECODE_GOODWEATHER
@@ -559,10 +567,12 @@
 #endif  // SEND_LEGOPF
 
 #ifndef DECODE_MITSUBISHIHEAVY
-#define DECODE_MITSUBISHIHEAVY _IR_ENABLE_DEFAULT_
+//#define DECODE_MITSUBISHIHEAVY _IR_ENABLE_DEFAULT_
+#define DECODE_MITSUBISHIHEAVY true
 #endif  // DECODE_MITSUBISHIHEAVY
 #ifndef SEND_MITSUBISHIHEAVY
-#define SEND_MITSUBISHIHEAVY   _IR_ENABLE_DEFAULT_
+//#define SEND_MITSUBISHIHEAVY   _IR_ENABLE_DEFAULT_
+#define SEND_MITSUBISHIHEAVY   true
 #endif  // SEND_MITSUBISHIHEAVY
 
 #ifndef DECODE_DAIKIN216
@@ -1172,7 +1182,7 @@ const uint16_t kMilesMinRepeat = 0;
 #define WHYNTER_BITS                  kWhynterBits
 
 // Turn on Debugging information by uncommenting the following line.
-// #define DEBUG 1
+//#define DEBUG 1
 
 #ifdef DEBUG
 #ifdef UNIT_TEST
